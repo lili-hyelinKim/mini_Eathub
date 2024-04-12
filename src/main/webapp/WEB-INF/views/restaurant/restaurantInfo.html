@@ -38,7 +38,7 @@
                     <input type="radio" name="slide" id="slide3" />
                     <input type="radio" name="slide" id="slide4" checked />
                     <ul id="imgholder" class="imgs">
-                        <li><img th:src="@{/images/aa.jpg}" /></li>
+                        <li><img th:src="@{/images/aa.jpeg}" /></li>
                         <li><img th:src="@{/images/bb.jpeg}" /></li>
                         <li><img th:src="@{/images/cc.jpeg}" /></li>
                         <li><img th:src="@{/images/dd.jpeg}" /></li>
@@ -65,7 +65,7 @@
                                     <i class="star half" style="width: 14px; height: 14px"></i>
                                 </span>
                                 <span class="_4qv3386" th:text="${restaurantInfo.rating}">평점</span>
-                                <a href="review.html"
+                                <a th:href="@{|/restaurant/detail/${restaurant_seq}/review|}"
                                     ><span class="_4qv3387" th:text="|${restaurantInfo.review_total} 개 리뷰|">리뷰수 </span>
                                     <img src="./image/icons/arrow-right-gray.svg" th:src="@{/images/arrow-right-gray.svg}" style="margin-top: 1px" />
                                 </a>
@@ -208,7 +208,7 @@
                             <div class="section-header mb-30">
                                 <h3 class="section-title __sm">레스토랑 공지</h3>
                                 <div class="utils">
-                                    <a href="notice.html" class="__btn-all" style="color: black; text-decoration: none">전체보기</a>
+                                    <a th:href="@{|/restaurant/detail/${restaurant_seq}/notice|}" class="__btn-all" style="color: black; text-decoration: none">전체보기</a>
                                 </div>
                             </div>
                             <div class="section-body" style="overflow: hidden">
@@ -237,7 +237,7 @@
                                                                 <br />
                                                                 특별 예약일 제외 다른 일자는 웨이팅 운영방식으로 진행됩니다.
                                                             </p>
-                                                            <a class="__more">
+                                                            <a class="__more" th:href="@{|/restaurant/detail/${restaurant_seq}/notice|}">
                                                                 <span>더보기</span>
                                                             </a>
                                                         </div>
@@ -298,7 +298,7 @@
                             <div class="section-header">
                                 <h3 class="section-title">메뉴</h3>
                                 <div class="utils">
-                                    <a href="menuList.html " class="__btn-all">전체보기</a>
+                                    <a th:href="@{|/restaurant/detail/${restaurant_seq}/menuList|}" class="__btn-all">전체보기</a>
                                 </div>
                             </div>
                             <div class="section-body">
@@ -318,7 +318,7 @@
                                 </div>
                             </div>
                             <div>
-                                <a href="menuList.html" class="btn-menupan-photo" style="text-decoration: none">
+                                <a th:href="@{|/restaurant/detail/${restaurant_seq}/menuList|}" class="btn-menupan-photo" style="text-decoration: none">
                                     <span>메뉴 전체보기</span>
                                 </a>
                             </div>
@@ -334,7 +334,7 @@
                                     사진
                                     <span class="count">668</span>
                                 </h3>
-                                <div class="utils"><a href="photo.html" class="__btn-all">전체보기</a></div>
+                                <div class="utils"><a th:href="@{|/restaurant/detail/${restaurant_seq}/photo|}" class="__btn-all">전체보기</a></div>
                             </div>
                             <div class="section-body">
                                 <div class="photo-grid-list">
@@ -399,7 +399,7 @@
                                         </a>
                                     </div>
                                     <div class="photo-grid-list-item">
-                                        <a href="photo.html" class="tb">
+                                        <a th:href="@{|/restaurant/detail/${restaurant_seq}/photo|}" class="tb">
                                             <div class="img">
                                                 <i class="count" style="z-index: 1">
                                                     <span>100+</span>

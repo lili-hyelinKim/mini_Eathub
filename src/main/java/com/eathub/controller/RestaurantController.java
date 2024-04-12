@@ -68,19 +68,34 @@ public class RestaurantController {
     }
 
     @GetMapping("/detail/{restaurant_seq}/menuList")
-    public String menu(@PathVariable Long restaurant_seq){
+    public String menu(@PathVariable Long restaurant_seq, Model model){
+        RestaurantInfo selectRestaurantInfo = restaurantService.selectRestaurantInfo(restaurant_seq);
+
+        model.addAttribute("restaurantInfo", selectRestaurantInfo);
         return "/restaurant/menuList";
     }
 
     @GetMapping("/detail/{restaurant_seq}/photo")
-    public String photo(@PathVariable Long restaurant_seq){
+    public String photo(@PathVariable Long restaurant_seq,Model model){
+        RestaurantInfo selectRestaurantInfo = restaurantService.selectRestaurantInfo(restaurant_seq);
+
+        model.addAttribute("restaurantInfo", selectRestaurantInfo);
         return "/restaurant/photo";
     }
 
     @GetMapping("/detail/{restaurant_seq}/review")
-    public String review(@PathVariable Long restaurant_seq){
+    public String review(@PathVariable Long restaurant_seq, Model model){
+        RestaurantInfo selectRestaurantInfo = restaurantService.selectRestaurantInfo(restaurant_seq);
+
+        model.addAttribute("restaurantInfo", selectRestaurantInfo);
         return "/restaurant/review";
     }
 
+    @GetMapping("/detail/{restaurant_seq}/notice")
+    public String notice(@PathVariable Long restaurant_seq, Model model){
+        RestaurantInfo selectRestaurantSearchList = restaurantService.selectRestaurantInfo(restaurant_seq);
 
+        model.addAttribute("restaurantInfo", selectRestaurantSearchList);
+        return "/restaurant/notice";
+    }
 }
